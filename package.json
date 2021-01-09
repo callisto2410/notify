@@ -1,0 +1,45 @@
+{
+  "name": "@modstrap/notify",
+  "version": "1.0.0",
+  "description": "...",
+  "main": "dist/Notify.js",
+  "types": "dist/Notify.d.ts",
+  "style": "dist/Notify.css",
+  "author": "Callisto (https://github.com/callisto2410)",
+  "license": "MIT",
+  "homepage": "https://github.com/callisto2410/modstrap-notify",
+  "bugs": {
+    "url": "https://github.com/callisto2410/modstrap-notify/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callisto2410/modstrap-notify.git"
+  },
+  "scripts": {
+    "build": "tsc --project tsconfig.json && npx sass --no-source-map src/Notify.scss dist/Notify.css",
+    "build:all": "npm run build:clean && npm run build && npm run build:demo",
+    "build:demo": "webpack --config webpack.config.js",
+    "build:demo:watch": "webpack --watch --config webpack.config.js",
+    "build:clean": "npx rimraf .cache dist demo/dist *.tgz",
+    "build:pack": "npm run build:clean && npm run build && npm pack"
+  },
+  "devDependencies": {
+    "@types/node": "^14.10.1",
+    "@types/toastr": "^2.1.38",
+    "autoprefixer": "^10.0.4",
+    "css-loader": "^5.0.1",
+    "postcss-loader": "^4.0.1",
+    "rimraf": "^3.0.2",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^2.0.0",
+    "ts-loader": "^8.0.4",
+    "typescript": "^4.0.2",
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1",
+    "toastr": "^2.1.4"
+  }
+}

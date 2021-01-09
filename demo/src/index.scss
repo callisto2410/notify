@@ -1,0 +1,146 @@
+@use "../../src/Notify";
+
+body {
+  margin: 0;
+  background: #ffffff;
+}
+
+body * {
+  box-sizing: border-box;
+}
+
+article {
+  color: #444444;
+  width: 100vw;
+  min-width: 320px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  width: 960px;
+  margin: auto;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+
+  @media (max-width: 960px) {
+    padding: 10px 10px 5px;
+  }
+}
+
+%grid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+%button {
+  width: 32%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font: 14px "Arial";
+  color: #efefee;
+  text-transform: uppercase;
+  user-select: none;
+  cursor: pointer;
+
+  &:active {
+    transform: translateY(2px);
+  }
+
+  @media (max-width: 768px) {
+    width: 32%;
+  }
+
+  @media (max-width: 425px) {
+    width: 49%;
+  }
+}
+
+@mixin background($background) {
+  @for $i from 1 through 6 {
+    &:nth-child(6n + #{$i}) {
+      background-color: darken($background, $i * 5%);
+    }
+  }
+}
+
+.notify-description {
+  strong {
+    margin: 0 0 5px;
+  }
+}
+
+.content {
+  .placements,
+  .types,
+  .controls {
+    @extend %grid;
+    margin: 0 0 15px;
+  }
+
+  .placements {
+    .button {
+      @include background(#d32f2f);
+    }
+  }
+
+  .types {
+    .button {
+      width: 23.5%;
+      @include background(#00796b);
+    }
+  }
+
+  .controls {
+    margin: 0;
+
+    .button {
+      width: 49%;
+      @include background(#00796b);
+    }
+  }
+
+  .button {
+    @extend %button;
+  }
+
+  @media (max-width: 960px) {
+    .controls {
+      margin: 0 0 5px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .placements,
+    .types,
+    .controls {
+      .button {
+        width: 49%;
+      }
+    }
+
+    .placements {
+      .button {
+        &:nth-last-child(1) {
+          margin: 5px 0 0;
+          width: 100%;
+        }
+      }
+    }
+
+    .types {
+      .button {
+        &:nth-last-child(1),
+        &:nth-last-child(2) {
+          margin: 5px 0 0;
+        }
+      }
+    }
+  }
+}
