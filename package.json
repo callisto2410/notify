@@ -1,7 +1,7 @@
 {
   "name": "@modstrap/notify",
   "version": "1.0.0",
-  "description": "...",
+  "description": "The implementation of notifications.",
   "main": "dist/Notify.js",
   "types": "dist/Notify.d.ts",
   "style": "dist/Notify.css",
