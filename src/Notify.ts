@@ -190,7 +190,7 @@ export class Notify {
      * Deletes all notifications immediately.
      */
     public static remove(): void {
-        const containers = document.querySelectorAll("." + this.container);
+        const containers = document.querySelectorAll("." + this.container) as NodeListOf<HTMLElement>;
 
         containers.forEach((container) => {
             container.remove();
@@ -201,7 +201,7 @@ export class Notify {
      * Deletes all notifications using animation.
      */
     public static clear(): void {
-        const containers = document.querySelectorAll("." + this.container);
+        const containers = document.querySelectorAll("." + this.container) as NodeListOf<HTMLElement>;
 
         containers.forEach((container) => {
             const elements = container.querySelectorAll("." + this.notify) as NodeListOf<NotifyElement>;
@@ -256,7 +256,7 @@ export class Notify {
      */
     private static createContainer(properties: NotifyDefaults): HTMLElement {
         const selector = "notify-" + properties.position;
-        let container = document.querySelector("." + selector);
+        let container = document.querySelector("." + selector) as HTMLElement | null;
 
         if (!container) {
             container = this.createElement(this.container, selector);
@@ -310,7 +310,7 @@ export class Notify {
             element.classList.add("animate__" + element.notify.animationOut);
 
             setTimeout(() => {
-                const containers = document.querySelectorAll("." + this.container);
+                const containers = document.querySelectorAll("." + this.container) as NodeListOf<HTMLElement>;
 
                 element.remove();
                 containers.forEach((container) => {
