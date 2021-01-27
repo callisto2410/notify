@@ -125,6 +125,13 @@ export declare class Notify {
      */
     private static create;
     /**
+     * Sets the necessary event listeners.
+     *
+     * @param element
+     * @private
+     */
+    private static setListeners;
+    /**
      * Returns the container for the notification.
      * If the container does not exist, creates and returns a new container.
      *

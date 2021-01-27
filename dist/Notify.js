@@ -105,6 +105,19 @@ class Notify {
         const container = this.createContainer(properties);
         const element = this.createNotify(properties);
         this.setLifetime(element);
+        this.setListeners(element);
+        (element.notify.position.startsWith("top"))
+            ? container.prepend(element)
+            : container.append(element);
+        (element.notify.onShow) && element.notify.onShow();
+    }
+    /**
+     * Sets the necessary event listeners.
+     *
+     * @param element
+     * @private
+     */
+    static setListeners(element) {
         element.addEventListener("mouseover", () => {
             this.resetLifetime(element);
             this.toggleProgressbar(element);
@@ -116,10 +129,6 @@ class Notify {
         element.addEventListener("click", () => {
             element.remove();
         });
-        (element.notify.position.startsWith("top"))
-            ? container.prepend(element)
-            : container.append(element);
-        (element.notify.onShow) && element.notify.onShow();
     }
     /**
      * Returns the container for the notification.
