@@ -7,11 +7,29 @@ export interface NotifyElements {
     progressbar: HTMLElement;
 }
 export interface NotifyProperties {
+    /**
+     * The content of the notification, the use of HTML code is allowed.
+     */
     content: string;
+    /**
+     * Position of the notification on the screen.
+     */
     position: NotifyPosition;
+    /**
+     * Animation when displaying a notification.
+     */
     animationIn: NotifyAnimation;
+    /**
+     * Animation when hiding a notification.
+     */
     animationOut: NotifyAnimation;
+    /**
+     * Duration of the notification display.
+     */
     duration: number;
+    /**
+     * Duration of the notification animation.
+     */
     animationDuration: number;
     /**
      * The lifecycle hook is called when creating a notification.
