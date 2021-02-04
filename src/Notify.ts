@@ -77,6 +77,16 @@ export type NotifyAnimation =
 
 /**
  * The implementation of notifications.
+ *
+ * @see success
+ * @see info
+ * @see warning
+ * @see error
+ * @see remove
+ * @see clear
+ *
+ * Notify:
+ * [Github]{@link https://github.com/callisto2410/modstrap-notify}
  */
 export class Notify {
     /**
