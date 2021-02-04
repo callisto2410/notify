@@ -3,6 +3,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.Notify = void 0;
 /**
  * The implementation of notifications.
+ *
+ * @see success
+ * @see info
+ * @see warning
+ * @see error
+ * @see remove
+ * @see clear
+ *
+ * Notify:
+ * [Github]{@link https://github.com/callisto2410/modstrap-notify}
  */
 class Notify {
     /**
