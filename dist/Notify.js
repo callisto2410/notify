@@ -116,10 +116,10 @@ class Notify {
         const element = this.createNotify(properties);
         this.setLifetime(element);
         this.setListeners(element);
-        (element.notify.position.startsWith("top"))
+        element.notify.position.startsWith("top")
             ? container.prepend(element)
             : container.append(element);
-        (element.notify.onShow) && element.notify.onShow();
+        element.notify.onShow && element.notify.onShow();
     }
     /**
      * Sets the necessary event listeners.
@@ -188,11 +188,11 @@ class Notify {
                 const containers = document.querySelectorAll("." + this.container);
                 element.remove();
                 containers.forEach((container) => {
-                    (!container.hasChildNodes()) && container.remove();
+                    !container.hasChildNodes() && container.remove();
                 });
-                (element.notify.onHide) && element.notify.onHide();
+                element.notify.onHide && element.notify.onHide();
             }, element.notify.animationDuration);
-        }, (duration !== null && duration !== void 0 ? duration : element.notify.duration));
+        }, duration !== null && duration !== void 0 ? duration : element.notify.duration);
     }
     /**
      * Resets the lifetime of the notification.

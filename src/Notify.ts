@@ -260,11 +260,11 @@ export class Notify {
         this.setLifetime(element);
         this.setListeners(element);
 
-        (element.notify.position.startsWith("top"))
+        element.notify.position.startsWith("top")
             ? container.prepend(element)
             : container.append(element);
 
-        (element.notify.onShow) && element.notify.onShow();
+        element.notify.onShow && element.notify.onShow();
     }
 
     /**
@@ -273,7 +273,7 @@ export class Notify {
      * @param element
      * @private
      */
-    private static setListeners(element: NotifyElement) {
+    private static setListeners(element: NotifyElement): void {
         element.addEventListener("mouseover", () => {
             this.resetLifetime(element);
             this.toggleProgressbar(element);
@@ -356,12 +356,12 @@ export class Notify {
 
                 element.remove();
                 containers.forEach((container) => {
-                    (!container.hasChildNodes()) && container.remove();
+                    !container.hasChildNodes() && container.remove();
                 });
 
-                (element.notify.onHide) && element.notify.onHide();
+                element.notify.onHide && element.notify.onHide();
             }, element.notify.animationDuration);
-        }, (duration ?? element.notify.duration));
+        }, duration ?? element.notify.duration);
     }
 
     /**
