@@ -1,19 +1,19 @@
 {
-  "name": "@modstrap/notify",
+  "name": "@umbrella/notify",
   "version": "1.0.0",
-  "description": "The implementation of notifications.",
+  "description": "The implementation of simple notifications.",
   "main": "dist/Notify.js",
   "types": "dist/Notify.d.ts",
   "style": "dist/Notify.css",
   "author": "Callisto (https://github.com/callisto2410)",
   "license": "MIT",
-  "homepage": "https://github.com/callisto2410/modstrap-notify",
+  "homepage": "https://github.com/callisto2410/notify",
   "bugs": {
-    "url": "https://github.com/callisto2410/modstrap-notify/issues"
+    "url": "https://github.com/callisto2410/notify/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/callisto2410/modstrap-notify.git"
+    "url": "git+https://github.com/callisto2410/notify.git"
   },
   "scripts": {
     "build": "npx tsc --project tsconfig.json && npx sass --no-source-map src/Notify.scss dist/Notify.css",
