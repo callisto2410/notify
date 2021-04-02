@@ -1,15 +1,19 @@
-import "./index.scss";
+import "../../node_modules/animate.css/animate.css";
 
-import Notify, {NotifyPosition} from "../../src/Notify";
+import "../../src/notify.scss";
+import "./main.scss";
+
+import Notify, {NotifyPosition} from "../../src/notify";
 
 Notify.defaults = {
     duration: 15000,
-}
+};
 
 document.body.addEventListener("click", (event: Event) => {
-    const target = event.target as HTMLDivElement;
+    const target = event.target as HTMLDivElement | null;
+    if (!target) return;
 
-    if (target.classList.contains("notify")) {
+    if (target.classList.contains("content-button--notify")) {
         let {
             type,
             position,
@@ -45,7 +49,7 @@ document.body.addEventListener("click", (event: Event) => {
         }
     }
 
-    if (target.classList.contains("control")) {
+    if (target.classList.contains("content-button--control")) {
         if (target.classList.contains("remove")) Notify.remove();
         if (target.classList.contains("clear")) Notify.clear();
     }

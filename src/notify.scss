@@ -1,0 +1,132 @@
+.notify-container {
+  position: fixed;
+  z-index: 100;
+  width: 405px;
+  display: flex;
+  flex-direction: column;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Position: top. */
+  &--top-left {
+    top: 10px;
+    left: 10px;
+  }
+
+  &--top {
+    top: 10px;
+    left: calc(50% - (405px / 2));
+  }
+
+  &--top-right {
+    top: 10px;
+    right: 10px;
+  }
+
+  /* Position: bottom. */
+  &--bottom-left {
+    bottom: 10px;
+    left: 10px;
+  }
+
+  &--bottom {
+    bottom: 10px;
+    left: calc(50% - (405px / 2));
+  }
+
+  &--bottom-right {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  @media (max-width: 425px) {
+    width: calc(100% - 20px);
+
+    /* Position: top. */
+    &--top {
+      left: 10px;
+    }
+
+    /* Position: bottom. */
+    &--bottom {
+      left: 10px;
+    }
+  }
+}
+
+.notify-content {
+  font: 14px "Arial";
+  color: #ffffff;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  width: 100%;
+  min-width: 100px;
+  margin: 0 0 10px;
+  box-shadow: 0 0 10px rgba(#000, .2);
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+
+  &:nth-last-child(1) {
+    margin: 0;
+  }
+
+  &--success {
+    background: rgba(#4caf50, .6);
+
+    .notify-content__icon {
+      background: url("assets/images/success.png") 0 50% no-repeat;
+    }
+  }
+
+  &--info {
+    background: rgba(#0277bd, .6);
+
+    .notify-content__icon {
+      background: url("assets/images/info.png") 0 50% no-repeat;
+    }
+  }
+
+  &--warning {
+    background: rgba(#ef6c00, .6);
+
+    .notify-content__icon {
+      background: url("assets/images/warning.png") 0 50% no-repeat;
+    }
+  }
+
+  &--error {
+    background: rgba(#c62828, .6);
+
+    .notify-content__icon {
+      background: url("assets/images/error.png") 0 50% no-repeat;
+    }
+  }
+
+  &__icon {
+    width: 60px;
+    height: 40px;
+  }
+
+  &__description {
+    width: calc(100% - 60px);
+  }
+
+  &__progressbar {
+    position: absolute;
+    bottom: 2px;
+    left: 2px;
+    width: calc(100% - 4px);
+    height: 2px;
+    background: #ffffff;
+    transition-property: width;
+
+    &--to-zero {
+      width: 0;
+    }
+  }
+}

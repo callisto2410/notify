@@ -86,7 +86,7 @@ export type NotifyAnimation =
  * @see clear
  *
  * Notify:
- * [Github]{@link https://github.com/callisto2410/modstrap-notify}
+ * [Github]{@link https://github.com/callisto2410/notify}
  */
 export class Notify {
     /**
@@ -108,28 +108,28 @@ export class Notify {
      *
      * @private
      */
-    private static readonly icon = "notify-icon";
+    private static readonly icon = Notify.notify + "__icon";
 
     /**
      * CSS selector for the notification description.
      *
      * @private
      */
-    private static readonly description = "notify-description";
+    private static readonly description = Notify.notify + "__description";
 
     /**
      * CSS selector for the notification progressbar.
      *
      * @private
      */
-    private static readonly progressbar = "notify-progressbar";
+    private static readonly progressbar = Notify.notify + "__progressbar";
 
     /**
      * CSS selector for the descending notification progressbar.
      *
      * @private
      */
-    private static readonly progressbarToZero = "notify-progressbar-to-zero";
+    private static readonly progressbarToZero = Notify.progressbar + "--to-zero";
 
     /**
      * Default settings.
@@ -297,7 +297,7 @@ export class Notify {
      * @private
      */
     private static createContainer(properties: NotifyDefaults): HTMLElement {
-        const selector = "notify-" + properties.position;
+        const selector = this.container + "--" + properties.position;
         let container = document.querySelector("." + selector) as HTMLElement | null;
 
         if (!container) {
@@ -319,7 +319,7 @@ export class Notify {
             this.notify,
             "animate__animated",
             "animate__" + properties.animationIn,
-            "notify-" + properties.type,
+            this.notify + "--" + properties.type,
         ) as NotifyElement;
 
         element.notify = {

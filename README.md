@@ -1,24 +1,27 @@
-# modstrap-notify
+# Notify
 
-The implementation of notifications.
+The implementation of simple notifications.
 
 ## Installation
 
-To install a specific version:
-```shell script
-npm i https://github.com/callisto2410/modstrap-notify.git#v1.0.0
+To install from **npm**:
+```sh
+npm i -D @umbrella/notify
 ```
 
-To install the current version:
-```shell script
-npm i https://github.com/callisto2410/modstrap-notify.git
+To install from **GitHub**:
+```sh
+npm i -D https://github.com/callisto2410/notify.git#v1.0.0
 ```
 
 ## Usage
 
-TypeScript
+TypeScript with WebPack:
 ```ts
-import Notify from "@modstrap/notify";
+import "../node_modules/animate.css/animate.css";
+import "../node_modules/@umbrella/notify/notify.css";
+
+import Notify from "@umbrella/notify";
 
 Notify.defaults = {
     duration: 15000,

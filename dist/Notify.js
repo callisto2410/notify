@@ -12,7 +12,7 @@ exports.Notify = void 0;
  * @see clear
  *
  * Notify:
- * [Github]{@link https://github.com/callisto2410/modstrap-notify}
+ * [Github]{@link https://github.com/callisto2410/notify}
  */
 class Notify {
     /**
@@ -148,7 +148,7 @@ class Notify {
      * @private
      */
     static createContainer(properties) {
-        const selector = "notify-" + properties.position;
+        const selector = this.container + "--" + properties.position;
         let container = document.querySelector("." + selector);
         if (!container) {
             container = this.createElement(this.container, selector);
@@ -163,7 +163,7 @@ class Notify {
      * @private
      */
     static createNotify(properties) {
-        const element = this.createElement(this.notify, "animate__animated", "animate__" + properties.animationIn, "notify-" + properties.type);
+        const element = this.createElement(this.notify, "animate__animated", "animate__" + properties.animationIn, this.notify + "--" + properties.type);
         element.notify = {
             ...properties,
             pic: this.createIcon(),
@@ -277,25 +277,25 @@ Notify.notify = "notify-content";
  *
  * @private
  */
-Notify.icon = "notify-icon";
+Notify.icon = Notify.notify + "__icon";
 /**
  * CSS selector for the notification description.
  *
  * @private
  */
-Notify.description = "notify-description";
+Notify.description = Notify.notify + "__description";
 /**
  * CSS selector for the notification progressbar.
  *
  * @private
  */
-Notify.progressbar = "notify-progressbar";
+Notify.progressbar = Notify.notify + "__progressbar";
 /**
  * CSS selector for the descending notification progressbar.
  *
  * @private
  */
-Notify.progressbarToZero = "notify-progressbar-to-zero";
+Notify.progressbarToZero = Notify.progressbar + "--to-zero";
 /**
  * Default settings.
  *
