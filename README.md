@@ -6,7 +6,7 @@ The implementation of simple notifications.
 
 To install:
 ```sh
-npm install --save-dev @callisto2410/notify
+npm install --save-dev @ordinateio/notify
 ```
 
 ## Usage
@@ -15,9 +15,9 @@ TypeScript with Webpack:
 ```ts
 import "./node_modules/animate.css/animate.css";
 
-import "@callisto2410/notify/dist/notify.css";
+import "@ordinateio/notify/dist/notify.css";
 
-import Notify from "@callisto2410/notify";
+import Notify from "@ordinateio/notify";
 
 Notify.defaults = {
     duration: 15000,
