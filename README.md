@@ -4,22 +4,18 @@ The implementation of simple notifications.
 
 ## Installation
 
-To install from **npm**:
+To install:
 ```sh
-npm i -D @umbrella/notify
-```
-
-To install from **GitHub**:
-```sh
-npm i -D https://github.com/callisto2410/notify.git#v1.0.0
+npm install --save-dev @umbrella/notify
 ```
 
 ## Usage
 
-TypeScript with WebPack:
+TypeScript with Webpack:
 ```ts
-import "../node_modules/animate.css/animate.css";
-import "../node_modules/@umbrella/notify/notify.css";
+import "./node_modules/animate.css/animate.css";
+
+import "@umbrella/notify/dist/notify.css";
 
 import Notify from "@umbrella/notify";
 
