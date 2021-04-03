@@ -1,6 +1,6 @@
 {
   "name": "@callisto2410/notify",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The implementation of simple notifications.",
   "main": "dist/notify.js",
   "types": "dist/notify.d.ts",
