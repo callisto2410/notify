@@ -1,5 +1,5 @@
 {
-  "name": "@umbrella/notify",
+  "name": "@callisto2410/notify",
   "version": "1.0.0",
   "description": "The implementation of simple notifications.",
   "main": "dist/notify.js",
@@ -18,8 +18,7 @@
     "type": "git",
     "url": "git+https://github.com/callisto2410/notify.git"
   },
-  "keyword": [
-    "@umbrella",
+  "keywords": [
     "notify"
   ],
   "scripts": {
