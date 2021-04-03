@@ -58,7 +58,7 @@ export declare type NotifyAnimation = "bounce" | "flash" | "pulse" | "rubberBand
  * @see clear
  *
  * Notify:
- * [Github]{@link https://github.com/callisto2410/notify}
+ * [Github]{@link https://github.com/ordinateio/notify}
  */
 export declare class Notify {
     /**

@@ -86,7 +86,7 @@ export type NotifyAnimation =
  * @see clear
  *
  * Notify:
- * [Github]{@link https://github.com/callisto2410/notify}
+ * [Github]{@link https://github.com/ordinateio/notify}
  */
 export class Notify {
     /**
