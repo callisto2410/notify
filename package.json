@@ -29,7 +29,8 @@
     "build:demo:watch": "npx webpack --watch --config demo/webpack.config.js",
     "build:demo:server": "npx live-server ./demo",
     "build:clean": "npx rimraf .cache dist demo/dist *.tgz",
-    "build:pack": "npm run build:clean && npm run build && npm pack"
+    "build:pack": "npm run build:clean && npm run build && npm pack",
+    "build:publish": "npm publish --access public"
   },
   "devDependencies": {
     "@types/node": "^14.14.20",
