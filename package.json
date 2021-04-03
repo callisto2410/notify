@@ -19,7 +19,9 @@
     "url": "git+https://github.com/ordinateio/notify.git.git"
   },
   "keywords": [
-    "notify"
+    "front-end",
+    "ui",
+    "typescript"
   ],
   "scripts": {
     "build": "npx tsc --project tsconfig.json && npx sass --no-source-map src/notify.scss dist/notify.css && npx copyfiles -u 1 src/assets/**/* dist",
