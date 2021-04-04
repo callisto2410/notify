@@ -76,7 +76,7 @@
   }
 
   &--success {
-    background: rgba(#4caf50, .6);
+    background: rgba(#4caf50, .7);
 
     .notify-content__icon {
       background: url("assets/images/success.png") 0 50% no-repeat;
@@ -84,7 +84,7 @@
   }
 
   &--info {
-    background: rgba(#0277bd, .6);
+    background: rgba(#0277bd, .7);
 
     .notify-content__icon {
       background: url("assets/images/info.png") 0 50% no-repeat;
@@ -92,7 +92,7 @@
   }
 
   &--warning {
-    background: rgba(#ef6c00, .6);
+    background: rgba(#ef6c00, .7);
 
     .notify-content__icon {
       background: url("assets/images/warning.png") 0 50% no-repeat;
@@ -100,7 +100,7 @@
   }
 
   &--error {
-    background: rgba(#c62828, .6);
+    background: rgba(#c62828, .7);
 
     .notify-content__icon {
       background: url("assets/images/error.png") 0 50% no-repeat;
