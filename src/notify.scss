@@ -114,6 +114,7 @@
 
   &__description {
     width: calc(100% - 60px);
+    text-shadow: 0 0 2px rgba(#000, .3);
   }
 
   &__progressbar {
