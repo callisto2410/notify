@@ -108,28 +108,28 @@ export class Notify {
      *
      * @private
      */
-    private static readonly icon = Notify.notify + "__icon";
+    private static readonly icon = "notify-content__icon";
 
     /**
      * CSS selector for the notification description.
      *
      * @private
      */
-    private static readonly description = Notify.notify + "__description";
+    private static readonly description = "notify-content__description";
 
     /**
      * CSS selector for the notification progressbar.
      *
      * @private
      */
-    private static readonly progressbar = Notify.notify + "__progressbar";
+    private static readonly progressbar = "notify-content__progressbar";
 
     /**
      * CSS selector for the descending notification progressbar.
      *
      * @private
      */
-    private static readonly progressbarToZero = Notify.progressbar + "--to-zero";
+    private static readonly progressbarToZero = "notify-content__progressbar--to-zero";
 
     /**
      * Default settings.
@@ -156,7 +156,7 @@ export class Notify {
         this._defaults = {
             ...this._defaults,
             ...properties,
-        }
+        };
     }
 
     /**

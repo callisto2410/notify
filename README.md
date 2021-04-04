@@ -3,15 +3,11 @@
 The implementation of simple notifications.
 
 ## Installation
-
-To install:
 ```sh
 npm install --save-dev @ordinateio/notify
 ```
 
 ## Usage
-
-TypeScript with Webpack:
 ```ts
 import "./node_modules/animate.css/animate.css";
 import "@ordinateio/notify/dist/notify.css";

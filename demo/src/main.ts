@@ -50,7 +50,7 @@ document.body.addEventListener("click", (event: Event) => {
     }
 
     if (target.classList.contains("content-button--control")) {
-        if (target.classList.contains("remove")) Notify.remove();
-        if (target.classList.contains("clear")) Notify.clear();
+        if (target.classList.contains("content-button--remove")) Notify.remove();
+        if (target.classList.contains("content-button--clear")) Notify.clear();
     }
 });
