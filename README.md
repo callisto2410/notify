@@ -16,7 +16,7 @@ import Notify from "@ordinateio/notify";
 
 Notify.defaults = {
     duration: 15000,
-}
+};
 
 Notify.success("For example, when designing a brochure or book, a designer ...");
 ```
