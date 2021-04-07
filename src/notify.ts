@@ -152,7 +152,7 @@ export class Notify {
      *
      * @param properties
      */
-    public static set defaults(properties: Partial<NotifyProperties>) {
+    static set defaults(properties: Partial<NotifyProperties>) {
         this._defaults = {
             ...this._defaults,
             ...properties,
@@ -165,7 +165,7 @@ export class Notify {
      * @param content Content of the notification. HTML is allowed.
      * @param properties Additional notification properties.
      */
-    public static success(content: string, properties: Partial<NotifyProperties> = {}): void {
+    static success(content: string, properties: Partial<NotifyProperties> = {}): void {
         this.create({
             ...this._defaults,
             ...properties,
@@ -180,7 +180,7 @@ export class Notify {
      * @param content Content of the notification. HTML is allowed.
      * @param properties Additional notification properties.
      */
-    public static info(content: string, properties: Partial<NotifyProperties> = {}): void {
+    static info(content: string, properties: Partial<NotifyProperties> = {}): void {
         this.create({
             ...this._defaults,
             ...properties,
@@ -195,7 +195,7 @@ export class Notify {
      * @param content Content of the notification. HTML is allowed.
      * @param properties Additional notification properties.
      */
-    public static warning(content: string, properties: Partial<NotifyProperties> = {}): void {
+    static warning(content: string, properties: Partial<NotifyProperties> = {}): void {
         this.create({
             ...this._defaults,
             ...properties,
@@ -210,7 +210,7 @@ export class Notify {
      * @param content Content of the notification. HTML is allowed.
      * @param properties Additional notification properties.
      */
-    public static error(content: string, properties: Partial<NotifyProperties> = {}): void {
+    static error(content: string, properties: Partial<NotifyProperties> = {}): void {
         this.create({
             ...this._defaults,
             ...properties,
@@ -222,7 +222,7 @@ export class Notify {
     /**
      * Deletes all notifications immediately.
      */
-    public static remove(): void {
+    static remove(): void {
         const containers = document.querySelectorAll("." + this.container) as NodeListOf<HTMLElement>;
 
         containers.forEach((container) => {
@@ -233,7 +233,7 @@ export class Notify {
     /**
      * Deletes all notifications using animation.
      */
-    public static clear(): void {
+    static clear(): void {
         const containers = document.querySelectorAll("." + this.container) as NodeListOf<HTMLElement>;
 
         containers.forEach((container) => {
