@@ -1,6 +1,6 @@
 {
   "name": "@ordinateio/notify",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "The implementation of simple notifications.",
   "main": "dist/notify.js",
   "types": "dist/notify.d.ts",
@@ -32,7 +32,8 @@
     "build:clean": "npx rimraf .cache dist demo/dist *.tgz",
     "npm:pack": "npm run build:clean && npm run build:dist && npm pack",
     "npm:publish": "npm publish --access public",
-    "npm:reinstall": "npx rimraf node_modules && npm install"
+    "npm:reinstall": "npx rimraf node_modules && npm install",
+    "npm:lock:only": "npm install --package-lock-only"
   },
   "devDependencies": {
     "@types/node": "^14",
