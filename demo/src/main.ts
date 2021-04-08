@@ -3,7 +3,7 @@ import "../../node_modules/animate.css/animate.css";
 import "../../src/notify.scss";
 import "./main.scss";
 
-import Notify, {NotifyPosition} from "../../src/notify";
+import {Notify, NotifyPosition} from "../../src/notify";
 
 Notify.defaults = {
     duration: 15000,
@@ -50,7 +50,16 @@ document.body.addEventListener("click", (event: Event) => {
     }
 
     if (target.classList.contains("content-button--control")) {
-        if (target.classList.contains("content-button--remove")) Notify.remove();
-        if (target.classList.contains("content-button--clear")) Notify.clear();
+        if (target.classList.contains("content-button--remove")) {
+            Notify.remove();
+        }
+
+        if (target.classList.contains("content-button--clear")) {
+            Notify.clear();
+        }
+
+        if (target.classList.contains("content-button--toggle-wallpaper")) {
+            document.body.classList.toggle("use-wallpaper");
+        }
     }
 });

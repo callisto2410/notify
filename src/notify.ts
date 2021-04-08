@@ -438,5 +438,3 @@ export class Notify {
         return progressbar;
     }
 }
-
-export default Notify;

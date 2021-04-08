@@ -40,7 +40,11 @@
 
 body {
   margin: 0;
-  background: url("assets/images/wallpaper.jpg") 50% 50% no-repeat;
+  background: #ffffff;
+
+  &.use-wallpaper {
+    background: url("assets/images/wallpaper.jpg") 50% 50% no-repeat;
+  }
 
   * {
     box-sizing: border-box;
@@ -90,7 +94,7 @@ article {
 
     .content-button {
       @include background(#00796b);
-      width: 49%;
+      width: 32%;
     }
   }
 
