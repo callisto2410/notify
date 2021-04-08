@@ -10,13 +10,13 @@
   ],
   "author": "Ordinate IO (https://github.com/ordinateio)",
   "license": "MIT",
-  "homepage": "https://github.com/ordinateio/notify.git",
+  "homepage": "https://github.com/ordinateio/notify",
   "bugs": {
-    "url": "https://github.com/ordinateio/notify.git/issues"
+    "url": "https://github.com/ordinateio/notify/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ordinateio/notify.git.git"
+    "url": "git+https://github.com/ordinateio/notify.git"
   },
   "keywords": [
     "front-end",
@@ -35,23 +35,22 @@
     "npm:reinstall": "npx rimraf node_modules && npm install"
   },
   "devDependencies": {
-    "@types/node": "^14.14.20",
-    "autoprefixer": "^10.2.1",
-    "copyfiles": "^2.4.1",
-    "css-loader": "^5.0.1",
-    "cssnano": "^4.1.10",
-    "live-server": "^1.2.1",
-    "postcss-loader": "^4.0.1",
-    "rimraf": "^3.0.2",
-    "sass": "^1.32.4",
-    "sass-loader": "^10.1.1",
-    "style-loader": "^2.0.0",
-    "ts-loader": "^8.0.14",
-    "typescript": "^4.0.2",
-    "webpack": "^5.14.0",
-    "webpack-cli": "^4.3.1"
+    "@types/node": "^14",
+    "autoprefixer": "^10",
+    "css-loader": "^5",
+    "cssnano": "^4",
+    "live-server": "^1",
+    "postcss-loader": "^5",
+    "rimraf": "^3",
+    "sass": "^1",
+    "sass-loader": "^11",
+    "style-loader": "^2",
+    "ts-loader": "^8",
+    "typescript": "^4",
+    "webpack": "^5",
+    "webpack-cli": "^4"
   },
   "dependencies": {
-    "animate.css": "^4.1.1"
+    "animate.css": "^4"
   }
 }
