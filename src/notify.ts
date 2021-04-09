@@ -171,7 +171,7 @@ export class Notify {
             ...properties,
             content: content,
             type: "success",
-        } as NotifyDefaults);
+        });
     }
 
     /**
@@ -186,7 +186,7 @@ export class Notify {
             ...properties,
             content: content,
             type: "info",
-        } as NotifyDefaults);
+        });
     }
 
     /**
@@ -201,7 +201,7 @@ export class Notify {
             ...properties,
             content: content,
             type: "warning",
-        } as NotifyDefaults);
+        });
     }
 
     /**
@@ -216,7 +216,7 @@ export class Notify {
             ...properties,
             content: content,
             type: "error",
-        } as NotifyDefaults);
+        });
     }
 
     /**
@@ -305,7 +305,7 @@ export class Notify {
             document.body.append(container);
         }
 
-        return container as HTMLElement;
+        return container;
     }
 
     /**
