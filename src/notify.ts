@@ -76,7 +76,7 @@ export type NotifyAnimation =
     | "slideInRight" | "slideInUp" | "slideOutDown" | "slideOutLeft" | "slideOutRight" | "slideOutUp";
 
 /**
- * The implementation of notifications.
+ * The implementation of simple notifications.
  *
  * @see success
  * @see info
