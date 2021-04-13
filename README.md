@@ -11,7 +11,6 @@ npm install --save-dev @ordinateio/notify
 ## Usage
 
 ```ts
-import "./node_modules/animate.css/animate.css";
 import "@ordinateio/notify/dist/notify.css";
 
 import {Notify} from "@ordinateio/notify";
