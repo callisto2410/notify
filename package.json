@@ -28,7 +28,7 @@
     "build:dist": "npx tsc --project tsconfig.json && npx sass --no-source-map src/notify.scss dist/notify.css && npx copyfiles -u 1 src/assets/**/* dist",
     "build:demo": "npx webpack --config demo/webpack.config.js",
     "build:demo:watch": "npx webpack --watch --config demo/webpack.config.js",
-    "build:demo:server": "npx live-server ./demo",
+    "start:demo:server": "npx live-server ./demo",
     "build:clean": "npx rimraf .cache dist demo/dist *.tgz",
     "npm:pack": "npm run build:clean && npm run build:dist && npm pack",
     "npm:publish": "npm publish --access public",
