@@ -71,6 +71,7 @@
   margin: 0 0 10px;
   box-shadow: 0 0 10px rgba(#000, .2);
   backdrop-filter: blur(3px);
+  user-select: none;
   cursor: pointer;
 
   &:nth-last-child(1) {
