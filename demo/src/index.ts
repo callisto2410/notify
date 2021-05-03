@@ -1,7 +1,7 @@
 import '../../node_modules/animate.css/animate.css';
 
 import '../../src/notify.scss';
-import './main.scss';
+import './index.scss';
 
 import {Notify, NotifyPosition} from '../../src/notify';
 
