@@ -55,25 +55,25 @@ export interface NotifyDefaults extends NotifyProperties {
     timeout: number;
 }
 
-export type NotifyPosition = "top-left" | "top" | "top-end" | "bottom-left" | "bottom" | "bottom-right";
+export type NotifyPosition = 'top-left' | 'top' | 'top-end' | 'bottom-left' | 'bottom' | 'bottom-right';
 
-export type NotifyType = "success" | "info" | "warning" | "error";
+export type NotifyType = 'success' | 'info' | 'warning' | 'error';
 
 export type NotifyAnimation =
-    | "bounce" | "flash" | "pulse" | "rubberBand" | "shakeX" | "shakeY" | "headShake" | "swing" | "tada" | "wobble"
-    | "jello" | "heartBeat" | "backInDown" | "backInLeft" | "backInRight" | "backInUp" | "backOutDown" | "backOutLeft"
-    | "backOutRight" | "backOutUp" | "bounceIn" | "bounceInDown" | "bounceInLeft" | "bounceInRight" | "bounceInUp"
-    | "bounceOut" | "bounceOutDown" | "bounceOutLeft" | "bounceOutRight" | "bounceOutUp" | "fadeIn" | "fadeInDown"
-    | "fadeInDownBig" | "fadeInLeft" | "fadeInLeftBig" | "fadeInRight" | "fadeInRightBig" | "fadeInUp" | "fadeInUpBig"
-    | "fadeInTopLeft" | "fadeInTopRight" | "fadeInBottomLeft" | "fadeInBottomRight" | "fadeOut" | "fadeOutDown"
-    | "fadeOutDownBig" | "fadeOutLeft" | "fadeOutLeftBig" | "fadeOutRight" | "fadeOutRightBig" | "fadeOutUp"
-    | "fadeOutUpBig" | "fadeOutTopLeft" | "fadeOutTopRight" | "fadeOutBottomRight" | "fadeOutBottomLeft" | "flip"
-    | "flipInX" | "flipInY" | "flipOutX" | "flipOutY" | "lightSpeedInRight" | "lightSpeedInLeft" | "lightSpeedOutRight"
-    | "lightSpeedOutLeft" | "rotateIn" | "rotateInDownLeft" | "rotateInDownRight" | "rotateInUpLeft" | "rotateInUpRight"
-    | "rotateOut" | "rotateOutDownLeft" | "rotateOutDownRight" | "rotateOutUpLeft" | "rotateOutUpRight" | "hinge"
-    | "jackInTheBox" | "rollIn" | "rollOut" | "zoomIn" | "zoomInDown" | "zoomInLeft" | "zoomInRight" | "zoomInUp"
-    | "zoomOut" | "zoomOutDown" | "zoomOutLeft" | "zoomOutRight" | "zoomOutUp" | "slideInDown" | "slideInLeft"
-    | "slideInRight" | "slideInUp" | "slideOutDown" | "slideOutLeft" | "slideOutRight" | "slideOutUp";
+    | 'bounce' | 'flash' | 'pulse' | 'rubberBand' | 'shakeX' | 'shakeY' | 'headShake' | 'swing' | 'tada' | 'wobble'
+    | 'jello' | 'heartBeat' | 'backInDown' | 'backInLeft' | 'backInRight' | 'backInUp' | 'backOutDown' | 'backOutLeft'
+    | 'backOutRight' | 'backOutUp' | 'bounceIn' | 'bounceInDown' | 'bounceInLeft' | 'bounceInRight' | 'bounceInUp'
+    | 'bounceOut' | 'bounceOutDown' | 'bounceOutLeft' | 'bounceOutRight' | 'bounceOutUp' | 'fadeIn' | 'fadeInDown'
+    | 'fadeInDownBig' | 'fadeInLeft' | 'fadeInLeftBig' | 'fadeInRight' | 'fadeInRightBig' | 'fadeInUp' | 'fadeInUpBig'
+    | 'fadeInTopLeft' | 'fadeInTopRight' | 'fadeInBottomLeft' | 'fadeInBottomRight' | 'fadeOut' | 'fadeOutDown'
+    | 'fadeOutDownBig' | 'fadeOutLeft' | 'fadeOutLeftBig' | 'fadeOutRight' | 'fadeOutRightBig' | 'fadeOutUp'
+    | 'fadeOutUpBig' | 'fadeOutTopLeft' | 'fadeOutTopRight' | 'fadeOutBottomRight' | 'fadeOutBottomLeft' | 'flip'
+    | 'flipInX' | 'flipInY' | 'flipOutX' | 'flipOutY' | 'lightSpeedInRight' | 'lightSpeedInLeft' | 'lightSpeedOutRight'
+    | 'lightSpeedOutLeft' | 'rotateIn' | 'rotateInDownLeft' | 'rotateInDownRight' | 'rotateInUpLeft' | 'rotateInUpRight'
+    | 'rotateOut' | 'rotateOutDownLeft' | 'rotateOutDownRight' | 'rotateOutUpLeft' | 'rotateOutUpRight' | 'hinge'
+    | 'jackInTheBox' | 'rollIn' | 'rollOut' | 'zoomIn' | 'zoomInDown' | 'zoomInLeft' | 'zoomInRight' | 'zoomInUp'
+    | 'zoomOut' | 'zoomOutDown' | 'zoomOutLeft' | 'zoomOutRight' | 'zoomOutUp' | 'slideInDown' | 'slideInLeft'
+    | 'slideInRight' | 'slideInUp' | 'slideOutDown' | 'slideOutLeft' | 'slideOutRight' | 'slideOutUp';
 
 /**
  * The implementation of simple notifications.
@@ -94,42 +94,42 @@ export class Notify {
      *
      * @private
      */
-    private static readonly container = "notify-container";
+    private static readonly container = 'notify-container';
 
     /**
      * CSS selector for the notification.
      *
      * @private
      */
-    private static readonly notify = "notify-content";
+    private static readonly notify = 'notify-content';
 
     /**
      * CSS selector for the notification icon.
      *
      * @private
      */
-    private static readonly icon = "notify-content__icon";
+    private static readonly icon = 'notify-content__icon';
 
     /**
      * CSS selector for the notification description.
      *
      * @private
      */
-    private static readonly description = "notify-content__description";
+    private static readonly description = 'notify-content__description';
 
     /**
      * CSS selector for the notification progressbar.
      *
      * @private
      */
-    private static readonly progressbar = "notify-content__progressbar";
+    private static readonly progressbar = 'notify-content__progressbar';
 
     /**
      * CSS selector for the descending notification progressbar.
      *
      * @private
      */
-    private static readonly progressbarToZero = "notify-content__progressbar--to-zero";
+    private static readonly progressbarToZero = 'notify-content__progressbar--to-zero';
 
     /**
      * Default settings.
@@ -137,11 +137,11 @@ export class Notify {
      * @private
      */
     private static _defaults: NotifyDefaults = {
-        content: "Content is missing!",
-        position: "top",
-        type: "success",
-        animationIn: "flipInX",
-        animationOut: "flipOutX",
+        content: 'Content is missing!',
+        position: 'top',
+        type: 'success',
+        animationIn: 'flipInX',
+        animationOut: 'flipOutX',
         duration: 10000,
         animationDuration: 750,
         timeout: -1,
@@ -170,7 +170,7 @@ export class Notify {
             ...this._defaults,
             ...properties,
             content: content,
-            type: "success",
+            type: 'success',
         });
     }
 
@@ -185,7 +185,7 @@ export class Notify {
             ...this._defaults,
             ...properties,
             content: content,
-            type: "info",
+            type: 'info',
         });
     }
 
@@ -200,7 +200,7 @@ export class Notify {
             ...this._defaults,
             ...properties,
             content: content,
-            type: "warning",
+            type: 'warning',
         });
     }
 
@@ -215,7 +215,7 @@ export class Notify {
             ...this._defaults,
             ...properties,
             content: content,
-            type: "error",
+            type: 'error',
         });
     }
 
@@ -223,7 +223,7 @@ export class Notify {
      * Deletes all notifications immediately.
      */
     static remove(): void {
-        const containers = document.querySelectorAll("." + this.container) as NodeListOf<HTMLElement>;
+        const containers = document.querySelectorAll('.' + this.container) as NodeListOf<HTMLElement>;
 
         containers.forEach((container) => {
             container.remove();
@@ -234,10 +234,10 @@ export class Notify {
      * Deletes all notifications using animation.
      */
     static clear(): void {
-        const containers = document.querySelectorAll("." + this.container) as NodeListOf<HTMLElement>;
+        const containers = document.querySelectorAll('.' + this.container) as NodeListOf<HTMLElement>;
 
         containers.forEach((container) => {
-            const elements = container.querySelectorAll("." + this.notify) as NodeListOf<NotifyElement>;
+            const elements = container.querySelectorAll('.' + this.notify) as NodeListOf<NotifyElement>;
 
             elements.forEach((element) => {
                 this.resetLifetime(element);
@@ -260,7 +260,7 @@ export class Notify {
         this.setLifetime(element);
         this.setListeners(element);
 
-        element.notify.position.startsWith("top")
+        element.notify.position.startsWith('top')
             ? container.prepend(element)
             : container.append(element);
 
@@ -274,17 +274,17 @@ export class Notify {
      * @private
      */
     private static setListeners(element: NotifyElement): void {
-        element.addEventListener("mouseover", () => {
+        element.addEventListener('mouseover', () => {
             this.resetLifetime(element);
             this.toggleProgressbar(element);
         });
 
-        element.addEventListener("mouseout", () => {
+        element.addEventListener('mouseout', () => {
             this.setLifetime(element);
             this.toggleProgressbar(element, element.notify.duration);
         });
 
-        element.addEventListener("click", () => {
+        element.addEventListener('click', () => {
             element.remove();
         });
     }
@@ -297,8 +297,8 @@ export class Notify {
      * @private
      */
     private static createContainer(properties: NotifyDefaults): HTMLElement {
-        const selector = this.container + "--" + properties.position;
-        let container = document.querySelector("." + selector) as HTMLElement | null;
+        const selector = this.container + '--' + properties.position;
+        let container = document.querySelector('.' + selector) as HTMLElement | null;
 
         if (!container) {
             container = this.createElement(this.container, selector);
@@ -317,9 +317,9 @@ export class Notify {
     private static createNotify(properties: NotifyDefaults): NotifyElement {
         const element = this.createElement(
             this.notify,
-            "animate__animated",
-            "animate__" + properties.animationIn,
-            this.notify + "--" + properties.type,
+            'animate__animated',
+            'animate__' + properties.animationIn,
+            this.notify + '--' + properties.type,
         ) as NotifyElement;
 
         element.notify = {
@@ -329,7 +329,7 @@ export class Notify {
             progressbar: this.createProgressbar(properties),
         };
 
-        element.style.animationDuration = element.notify.animationDuration + "ms";
+        element.style.animationDuration = element.notify.animationDuration + 'ms';
 
         element.append(
             element.notify.pic,
@@ -349,10 +349,10 @@ export class Notify {
      */
     private static setLifetime(element: NotifyElement, duration?: number): void {
         element.notify.timeout = window.setTimeout(() => {
-            element.classList.add("animate__" + element.notify.animationOut);
+            element.classList.add('animate__' + element.notify.animationOut);
 
             setTimeout(() => {
-                const containers = document.querySelectorAll("." + this.container) as NodeListOf<HTMLElement>;
+                const containers = document.querySelectorAll('.' + this.container) as NodeListOf<HTMLElement>;
 
                 element.remove();
                 containers.forEach((container) => {
@@ -382,7 +382,7 @@ export class Notify {
      * @private
      */
     private static toggleProgressbar(element: NotifyElement, duration: number = 0): void {
-        element.notify.progressbar.style.transitionDuration = duration + "ms";
+        element.notify.progressbar.style.transitionDuration = duration + 'ms';
         element.notify.progressbar.classList.toggle(this.progressbarToZero);
     }
 
@@ -393,7 +393,7 @@ export class Notify {
      * @private
      */
     private static createElement(...classList: string[]): HTMLElement {
-        const element = document.createElement("div");
+        const element = document.createElement('div');
         element.classList.add(...classList);
 
         return element;
@@ -429,7 +429,7 @@ export class Notify {
      */
     private static createProgressbar(properties: NotifyDefaults): HTMLElement {
         const progressbar = this.createElement(this.progressbar);
-        progressbar.style.transitionDuration = properties.duration + "ms";
+        progressbar.style.transitionDuration = properties.duration + 'ms';
 
         setTimeout(() => {
             progressbar.classList.toggle(this.progressbarToZero);

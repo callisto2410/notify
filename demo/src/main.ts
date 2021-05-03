@@ -1,38 +1,38 @@
-import "../../node_modules/animate.css/animate.css";
+import '../../node_modules/animate.css/animate.css';
 
-import "../../src/notify.scss";
-import "./main.scss";
+import '../../src/notify.scss';
+import './main.scss';
 
-import {Notify, NotifyPosition} from "../../src/notify";
+import {Notify, NotifyPosition} from '../../src/notify';
 
 Notify.defaults = {
     duration: 15000,
 };
 
-document.body.addEventListener("click", (event: Event) => {
+document.body.addEventListener('click', (event: Event) => {
     const target = event.target as HTMLDivElement | null;
     if (!target) return;
 
-    if (target.classList.contains("content-button--notify")) {
+    if (target.classList.contains('content-button--notify')) {
         let {
             type,
             position,
         } = target.dataset;
 
-        if (!position) position = "top";
+        if (!position) position = 'top';
 
         switch (type) {
-            case "success":
-                Notify.success("For example, when designing a brochure or book, a designer ...");
+            case 'success':
+                Notify.success('For example, when designing a brochure or book, a designer ...');
                 break;
-            case "info":
-                Notify.info("For example, when designing a brochure or book, a designer ...");
+            case 'info':
+                Notify.info('For example, when designing a brochure or book, a designer ...');
                 break;
-            case "warning":
-                Notify.warning("For example, when designing a brochure or book, a designer ...");
+            case 'warning':
+                Notify.warning('For example, when designing a brochure or book, a designer ...');
                 break;
-            case "error":
-                Notify.error("For example, when designing a brochure or book, a designer ...");
+            case 'error':
+                Notify.error('For example, when designing a brochure or book, a designer ...');
                 break;
             default:
                 const random = Math.floor((Math.random() * 4));
@@ -49,17 +49,17 @@ document.body.addEventListener("click", (event: Event) => {
         }
     }
 
-    if (target.classList.contains("content-button--control")) {
-        if (target.classList.contains("content-button--remove")) {
+    if (target.classList.contains('content-button--control')) {
+        if (target.classList.contains('content-button--remove')) {
             Notify.remove();
         }
 
-        if (target.classList.contains("content-button--clear")) {
+        if (target.classList.contains('content-button--clear')) {
             Notify.clear();
         }
 
-        if (target.classList.contains("content-button--toggle-wallpaper")) {
-            document.body.classList.toggle("use-wallpaper");
+        if (target.classList.contains('content-button--toggle-wallpaper')) {
+            document.body.classList.toggle('use-wallpaper');
         }
     }
 });

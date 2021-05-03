@@ -11,7 +11,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font: 14px "Arial";
+  font: 14px 'Arial';
   color: #efefee;
   text-transform: uppercase;
   user-select: none;
@@ -43,7 +43,7 @@ body {
   background: #ffffff;
 
   &.use-wallpaper {
-    background: url("assets/images/wallpaper.jpg") 50% 50% no-repeat;
+    background: url('assets/images/wallpaper.jpg') 50% 50% no-repeat;
   }
 
   * {

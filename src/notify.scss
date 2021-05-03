@@ -1,4 +1,4 @@
-@use "../node_modules/animate.css/animate.css";
+@use '../node_modules/animate.css/animate.css';
 
 .notify-container {
   position: fixed;
@@ -59,7 +59,7 @@
 }
 
 .notify-content {
-  font: 14px "Arial";
+  font: 14px 'Arial';
   color: #ffffff;
   position: relative;
   display: flex;
@@ -81,7 +81,7 @@
     background: rgba(#2e7d32, .8);
 
     .notify-content__icon {
-      background: url("assets/images/success.svg") 0 50% no-repeat;
+      background: url('assets/images/success.svg') 0 50% no-repeat;
     }
   }
 
@@ -89,7 +89,7 @@
     background: rgba(#1565c0, .8);
 
     .notify-content__icon {
-      background: url("assets/images/info.svg") 0 50% no-repeat;
+      background: url('assets/images/info.svg') 0 50% no-repeat;
     }
   }
 
@@ -97,7 +97,7 @@
     background: rgba(#ff6f00, .8);
 
     .notify-content__icon {
-      background: url("assets/images/warning.svg") 0 50% no-repeat;
+      background: url('assets/images/warning.svg') 0 50% no-repeat;
     }
   }
 
@@ -105,7 +105,7 @@
     background: rgba(#c62828, .8);
 
     .notify-content__icon {
-      background: url("assets/images/error.svg") 0 50% no-repeat;
+      background: url('assets/images/error.svg') 0 50% no-repeat;
     }
   }
 
