@@ -6,7 +6,7 @@ import './index.scss';
 import {Notify, NotifyPosition} from '../../src/notify';
 
 Notify.defaults = {
-    duration: 15000,
+    duration: 20000,
 };
 
 document.body.addEventListener('click', (event: Event) => {
@@ -44,7 +44,7 @@ document.body.addEventListener('click', (event: Event) => {
 
                 method(`<strong>For example:</strong> When designing a brochure or book, a designer ...`, {
                     position: position as NotifyPosition,
-                    duration: 5000,
+                    duration: 10000,
                 });
         }
     }

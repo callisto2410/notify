@@ -142,7 +142,7 @@ export class Notify {
         type: 'success',
         animationIn: 'flipInX',
         animationOut: 'flipOutX',
-        duration: 10000,
+        duration: 15000,
         animationDuration: 750,
         timeout: -1,
     };
