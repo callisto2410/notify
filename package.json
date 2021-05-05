@@ -1,6 +1,6 @@
 {
   "name": "@ordinateio/notify",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "The implementation of simple notifications.",
   "main": "dist/notify.js",
   "types": "dist/notify.d.ts",
