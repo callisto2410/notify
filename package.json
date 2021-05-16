@@ -32,8 +32,7 @@
     "clean:all": "rimraf .cache dist demo/dist *.tgz",
     "npm:pack": "npm run clean:all && npm run build:dist && npm pack",
     "npm:publish": "npm publish --access public",
-    "npm:reinstall": "rimraf node_modules && npm install",
-    "npm:reinstall:lock": "npm install --package-lock-only"
+    "npm:update:lock": "npm install --package-lock-only"
   },
   "devDependencies": {
     "@types/node": "^14",
