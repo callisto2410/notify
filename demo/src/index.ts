@@ -1,9 +1,9 @@
 import '../../node_modules/animate.css/animate.css';
 
-import '../../src/notify.scss';
-import './index.scss';
+import '../../src/index.scss';
+import {Notify, NotifyPosition} from '../../src';
 
-import {Notify, NotifyPosition} from '../../src/notify';
+import './index.scss';
 
 Notify.defaults = {
     duration: 20000,

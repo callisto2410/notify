@@ -2,9 +2,9 @@
   "name": "@ordinateio/notify",
   "version": "1.0.7",
   "description": "The implementation of simple notifications.",
-  "main": "dist/notify.js",
-  "types": "dist/notify.d.ts",
-  "style": "dist/notify.css",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "style": "dist/index.css",
   "files": [
     "dist/**/*"
   ],
@@ -24,16 +24,16 @@
     "typescript"
   ],
   "scripts": {
-    "build:all": "npm run build:clean && npm run build:dist && npm run build:demo",
-    "build:dist": "npx tsc --project tsconfig.json && npx sass --no-source-map src/notify.scss dist/notify.css && npx copyfiles -u 1 src/assets/**/* dist",
-    "build:demo": "npx webpack --config demo/webpack.config.js",
-    "build:demo:watch": "npx webpack --watch --config demo/webpack.config.js",
-    "build:demo:server": "npx live-server ./demo",
-    "build:clean": "npx rimraf .cache dist demo/dist *.tgz",
-    "npm:pack": "npm run build:clean && npm run build:dist && npm pack",
+    "build:all": "npm run clean:all && npm run build:dist && npm run build:dev",
+    "build:dev": "webpack --config demo/webpack.dev.js",
+    "build:dev:watch": "webpack --watch --config demo/webpack.dev.js",
+    "build:dev:serve": "live-server ./demo",
+    "build:dist": "tsc --project tsconfig.json && sass --no-source-map src/index.scss dist/index.css && copyfiles -u 1 src/assets/**/* dist",
+    "clean:all": "rimraf .cache dist demo/dist *.tgz",
+    "npm:pack": "npm run clean:all && npm run build:dist && npm pack",
     "npm:publish": "npm publish --access public",
-    "npm:reinstall": "npx rimraf node_modules && npm install",
-    "npm:install:lock": "npm install --package-lock-only"
+    "npm:reinstall": "rimraf node_modules && npm install",
+    "npm:reinstall:lock": "npm install --package-lock-only"
   },
   "devDependencies": {
     "@types/node": "^14",
@@ -50,7 +50,8 @@
     "ts-loader": "^8",
     "typescript": "^4",
     "webpack": "^5",
-    "webpack-cli": "^4"
+    "webpack-cli": "^4",
+    "webpack-merge": "^5.7.3"
   },
   "dependencies": {
     "animate.css": "^4"
