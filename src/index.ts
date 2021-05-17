@@ -94,49 +94,49 @@ export class Notify {
      *
      * @private
      */
-    private static readonly container = 'notify-container';
+    private readonly container = 'notify-container';
 
     /**
      * CSS selector for the notification.
      *
      * @private
      */
-    private static readonly notify = 'notify-content';
+    private readonly notify = 'notify-content';
 
     /**
      * CSS selector for the notification icon.
      *
      * @private
      */
-    private static readonly icon = 'notify-content__icon';
+    private readonly icon = 'notify-content__icon';
 
     /**
      * CSS selector for the notification description.
      *
      * @private
      */
-    private static readonly description = 'notify-content__description';
+    private readonly description = 'notify-content__description';
 
     /**
      * CSS selector for the notification progressbar.
      *
      * @private
      */
-    private static readonly progressbar = 'notify-content__progressbar';
+    private readonly progressbar = 'notify-content__progressbar';
 
     /**
      * CSS selector for the descending notification progressbar.
      *
      * @private
      */
-    private static readonly progressbarToZero = 'notify-content__progressbar--to-zero';
+    private readonly progressbarToZero = 'notify-content__progressbar--to-zero';
 
     /**
      * Default settings.
      *
      * @private
      */
-    private static _defaults: NotifyDefaults = {
+    private readonly _defaults: NotifyDefaults = {
         content: 'Content is missing!',
         position: 'top',
         type: 'success',
@@ -148,11 +148,11 @@ export class Notify {
     };
 
     /**
-     * Default settings.
+     * Notify constructor.
      *
      * @param properties
      */
-    static set defaults(properties: Partial<NotifyProperties>) {
+    constructor(properties: Partial<NotifyProperties> = {}) {
         this._defaults = {
             ...this._defaults,
             ...properties,
@@ -165,7 +165,7 @@ export class Notify {
      * @param content Content of the notification. HTML is allowed.
      * @param properties Additional notification properties.
      */
-    static success(content: string, properties: Partial<NotifyProperties> = {}): void {
+    success(content: string, properties: Partial<NotifyProperties> = {}): void {
         this.create({
             ...this._defaults,
             ...properties,
@@ -180,7 +180,7 @@ export class Notify {
      * @param content Content of the notification. HTML is allowed.
      * @param properties Additional notification properties.
      */
-    static info(content: string, properties: Partial<NotifyProperties> = {}): void {
+    info(content: string, properties: Partial<NotifyProperties> = {}): void {
         this.create({
             ...this._defaults,
             ...properties,
@@ -195,7 +195,7 @@ export class Notify {
      * @param content Content of the notification. HTML is allowed.
      * @param properties Additional notification properties.
      */
-    static warning(content: string, properties: Partial<NotifyProperties> = {}): void {
+    warning(content: string, properties: Partial<NotifyProperties> = {}): void {
         this.create({
             ...this._defaults,
             ...properties,
@@ -210,7 +210,7 @@ export class Notify {
      * @param content Content of the notification. HTML is allowed.
      * @param properties Additional notification properties.
      */
-    static error(content: string, properties: Partial<NotifyProperties> = {}): void {
+    error(content: string, properties: Partial<NotifyProperties> = {}): void {
         this.create({
             ...this._defaults,
             ...properties,
@@ -222,7 +222,7 @@ export class Notify {
     /**
      * Deletes all notifications immediately.
      */
-    static remove(): void {
+    remove(): void {
         const containers = document.querySelectorAll('.' + this.container) as NodeListOf<HTMLElement>;
 
         containers.forEach((container) => {
@@ -233,14 +233,14 @@ export class Notify {
     /**
      * Deletes all notifications using animation.
      */
-    static clear(): void {
+    clear(): void {
         const containers = document.querySelectorAll('.' + this.container) as NodeListOf<HTMLElement>;
 
         containers.forEach((container) => {
             const elements = container.querySelectorAll('.' + this.notify) as NodeListOf<NotifyElement>;
 
             elements.forEach((element) => {
-                this.resetLifetime(element);
+                Notify.resetLifetime(element);
                 this.toggleProgressbar(element);
                 this.setLifetime(element, 0);
             });
@@ -253,7 +253,7 @@ export class Notify {
      * @param properties
      * @private
      */
-    private static create(properties: NotifyDefaults): void {
+    private create(properties: NotifyDefaults): void {
         const container = this.createContainer(properties);
         const element = this.createNotify(properties);
 
@@ -273,9 +273,9 @@ export class Notify {
      * @param element
      * @private
      */
-    private static setListeners(element: NotifyElement): void {
+    private setListeners(element: NotifyElement): void {
         element.addEventListener('mouseover', () => {
-            this.resetLifetime(element);
+            Notify.resetLifetime(element);
             this.toggleProgressbar(element);
         });
 
@@ -296,12 +296,12 @@ export class Notify {
      * @param properties
      * @private
      */
-    private static createContainer(properties: NotifyDefaults): HTMLElement {
+    private createContainer(properties: NotifyDefaults): HTMLElement {
         const selector = this.container + '--' + properties.position;
         let container = document.querySelector('.' + selector) as HTMLElement | null;
 
         if (!container) {
-            container = this.createElement(this.container, selector);
+            container = Notify.createElement(this.container, selector);
             document.body.append(container);
         }
 
@@ -314,8 +314,8 @@ export class Notify {
      * @param properties
      * @private
      */
-    private static createNotify(properties: NotifyDefaults): NotifyElement {
-        const element = this.createElement(
+    private createNotify(properties: NotifyDefaults): NotifyElement {
+        const element = Notify.createElement(
             this.notify,
             'animate__animated',
             'animate__' + properties.animationIn,
@@ -347,7 +347,7 @@ export class Notify {
      * @param duration
      * @private
      */
-    private static setLifetime(element: NotifyElement, duration?: number): void {
+    private setLifetime(element: NotifyElement, duration?: number): void {
         element.notify.timeout = window.setTimeout(() => {
             element.classList.add('animate__' + element.notify.animationOut);
 
@@ -381,7 +381,7 @@ export class Notify {
      * @param duration
      * @private
      */
-    private static toggleProgressbar(element: NotifyElement, duration: number = 0): void {
+    private toggleProgressbar(element: NotifyElement, duration: number = 0): void {
         element.notify.progressbar.style.transitionDuration = duration + 'ms';
         element.notify.progressbar.classList.toggle(this.progressbarToZero);
     }
@@ -404,8 +404,8 @@ export class Notify {
      *
      * @private
      */
-    private static createIcon(): HTMLElement {
-        return this.createElement(this.icon);
+    private createIcon(): HTMLElement {
+        return Notify.createElement(this.icon);
     }
 
     /**
@@ -414,8 +414,8 @@ export class Notify {
      * @param properties
      * @private
      */
-    private static createDescription(properties: NotifyDefaults): HTMLElement {
-        const description = this.createElement(this.description);
+    private createDescription(properties: NotifyDefaults): HTMLElement {
+        const description = Notify.createElement(this.description);
         description.innerHTML = properties.content;
 
         return description;
@@ -427,8 +427,8 @@ export class Notify {
      * @param properties
      * @private
      */
-    private static createProgressbar(properties: NotifyDefaults): HTMLElement {
-        const progressbar = this.createElement(this.progressbar);
+    private createProgressbar(properties: NotifyDefaults): HTMLElement {
+        const progressbar = Notify.createElement(this.progressbar);
         progressbar.style.transitionDuration = properties.duration + 'ms';
 
         setTimeout(() => {

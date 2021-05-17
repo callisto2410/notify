@@ -1,13 +1,11 @@
-import '../../node_modules/animate.css/animate.css';
-
 import '../../src/index.scss';
 import {Notify, NotifyPosition} from '../../src';
 
 import './index.scss';
 
-Notify.defaults = {
+const notify = new Notify({
     duration: 20000,
-};
+});
 
 document.body.addEventListener('click', (event: Event) => {
     const target = event.target as HTMLDivElement | null;
@@ -19,28 +17,28 @@ document.body.addEventListener('click', (event: Event) => {
             position,
         } = target.dataset;
 
-        if (!position) position = 'top';
+        !position && (position = 'top');
 
         switch (type) {
             case 'success':
-                Notify.success('For example, when designing a brochure or book, a designer ...');
+                notify.success('For example, when designing a brochure or book, a designer ...');
                 break;
             case 'info':
-                Notify.info('For example, when designing a brochure or book, a designer ...');
+                notify.info('For example, when designing a brochure or book, a designer ...');
                 break;
             case 'warning':
-                Notify.warning('For example, when designing a brochure or book, a designer ...');
+                notify.warning('For example, when designing a brochure or book, a designer ...');
                 break;
             case 'error':
-                Notify.error('For example, when designing a brochure or book, a designer ...');
+                notify.error('For example, when designing a brochure or book, a designer ...');
                 break;
             default:
                 const random = Math.floor((Math.random() * 4));
-                let method = Notify.success.bind(Notify);
+                let method = notify.success.bind(notify);
 
-                if (random === 1) method = Notify.info.bind(Notify);
-                if (random === 2) method = Notify.warning.bind(Notify);
-                if (random === 3) method = Notify.error.bind(Notify);
+                if (random === 1) method = notify.info.bind(notify);
+                if (random === 2) method = notify.warning.bind(notify);
+                if (random === 3) method = notify.error.bind(notify);
 
                 method(`<strong>For example:</strong> When designing a brochure or book, a designer ...`, {
                     position: position as NotifyPosition,
@@ -51,11 +49,11 @@ document.body.addEventListener('click', (event: Event) => {
 
     if (target.classList.contains('content-button--control')) {
         if (target.classList.contains('content-button--remove')) {
-            Notify.remove();
+            notify.remove();
         }
 
         if (target.classList.contains('content-button--clear')) {
-            Notify.clear();
+            notify.clear();
         }
 
         if (target.classList.contains('content-button--toggle-wallpaper')) {
