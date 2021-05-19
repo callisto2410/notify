@@ -24,7 +24,7 @@
     "typescript"
   ],
   "scripts": {
-    "build:all": "run-s clean:{cache,dist} && npm run build:dist && npm run build:dev",
+    "build:all": "npm run clean:all && npm run build:dist && npm run build:dev",
     "build:dev": "webpack --config demo/webpack.dev.js",
     "build:dev:watch": "webpack --watch --config demo/webpack.dev.js",
     "build:dev:serve": "live-server ./demo",
