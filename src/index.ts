@@ -136,7 +136,7 @@ export class Notify {
      *
      * @private
      */
-    private readonly _defaults: NotifyDefaults = {
+    private readonly defaults: NotifyDefaults = {
         content: 'Content is missing!',
         position: 'top',
         type: 'success',
@@ -153,8 +153,8 @@ export class Notify {
      * @param properties
      */
     constructor(properties: Partial<NotifyProperties> = {}) {
-        this._defaults = {
-            ...this._defaults,
+        this.defaults = {
+            ...this.defaults,
             ...properties,
         };
     }
@@ -167,7 +167,7 @@ export class Notify {
      */
     success(content: string, properties: Partial<NotifyProperties> = {}): void {
         this.create({
-            ...this._defaults,
+            ...this.defaults,
             ...properties,
             content: content,
             type: 'success',
@@ -182,7 +182,7 @@ export class Notify {
      */
     info(content: string, properties: Partial<NotifyProperties> = {}): void {
         this.create({
-            ...this._defaults,
+            ...this.defaults,
             ...properties,
             content: content,
             type: 'info',
@@ -197,7 +197,7 @@ export class Notify {
      */
     warning(content: string, properties: Partial<NotifyProperties> = {}): void {
         this.create({
-            ...this._defaults,
+            ...this.defaults,
             ...properties,
             content: content,
             type: 'warning',
@@ -212,7 +212,7 @@ export class Notify {
      */
     error(content: string, properties: Partial<NotifyProperties> = {}): void {
         this.create({
-            ...this._defaults,
+            ...this.defaults,
             ...properties,
             content: content,
             type: 'error',
