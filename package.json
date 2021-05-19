@@ -33,7 +33,7 @@
     "clean:cache": "rimraf .cache",
     "clean:dist": "rimraf dist demo/dist",
     "npm:pack": "npm run clean:all && npm run build:dist && npm pack",
-    "npm:publish": "npm publish --access public",
+    "npm:publish": "npm run clean:all && npm run build:dist && npm publish --access public",
     "npm:update:lock": "npm install --package-lock-only"
   },
   "devDependencies": {
