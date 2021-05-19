@@ -24,16 +24,17 @@
     "typescript"
   ],
   "scripts": {
-    "build:all": "npm run clean:all && npm run build:dist && npm run build:dev",
+    "build:all": "run-s clean:all build:{dist,dev}",
     "build:dev": "webpack --config demo/webpack.dev.js",
     "build:dev:watch": "webpack --watch --config demo/webpack.dev.js",
     "build:dev:serve": "live-server ./demo",
     "build:dist": "tsc --project tsconfig.json && sass --no-source-map src/index.scss dist/index.css && copyfiles -u 1 src/assets/**/* dist",
-    "clean:all": "run-s clean:{cache,dist}",
+    "clean:all": "run-s clean:{cache,dist,demo}",
     "clean:cache": "rimraf .cache",
-    "clean:dist": "rimraf dist demo/dist",
-    "npm:pack": "npm run clean:all && npm run build:dist && npm pack",
-    "npm:publish": "npm run clean:all && npm run build:dist && npm publish --access public",
+    "clean:dist": "rimraf dist",
+    "clean:demo": "rimraf demo/dist",
+    "npm:pack": "run-s clean:dist build:dist && npm pack",
+    "npm:publish": "run-s clean:dist build:dist && npm publish --access public",
     "npm:update:lock": "npm install --package-lock-only"
   },
   "devDependencies": {
