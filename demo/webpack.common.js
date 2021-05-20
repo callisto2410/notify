@@ -44,6 +44,7 @@ const webpackConfig = {
     performance: {
         hints: false,
     },
+    stats: 'minimal',
     entry: Path.resolve(__dirname, 'src/index.ts'),
     output: {
         filename: '[name].js',
