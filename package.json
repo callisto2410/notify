@@ -1,6 +1,6 @@
 {
   "name": "@ordinateio/notify",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "The implementation of simple notifications.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -39,13 +39,13 @@
   },
   "devDependencies": {
     "@types/node": "^14",
-    "animate.css": "^4.1.1",
+    "animate.css": "^4",
     "autoprefixer": "^10",
     "copyfiles": "^2",
     "css-loader": "^5",
     "cssnano": "^4",
     "live-server": "^1",
-    "npm-run-all": "^4.1.5",
+    "npm-run-all": "^4",
     "postcss-loader": "^5",
     "rimraf": "^3",
     "sass": "^1",
