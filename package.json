@@ -35,7 +35,7 @@
     "clean:demo": "rimraf demo/dist",
     "npm:pack": "run-s clean:{cache,dist} build:dist && npm pack",
     "npm:publish": "run-s clean:{cache,dist} build:dist && npm publish --access public",
-    "npm:update:lock": "npm install --package-lock-only"
+    "npm:update-lock-file": "npm install --package-lock-only"
   },
   "devDependencies": {
     "@types/node": "^14",
