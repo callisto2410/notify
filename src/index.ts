@@ -139,11 +139,11 @@ export class Notify {
     private readonly defaults: NotifyDefaults = {
         content: 'Content is missing!',
         position: 'top',
-        type: 'success',
         animationIn: 'flipInX',
         animationOut: 'flipOutX',
         duration: 15000,
         animationDuration: 750,
+        type: 'success',
         timeout: -1,
     };
 

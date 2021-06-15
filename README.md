@@ -4,7 +4,7 @@ The implementation of simple notifications.
 
 ## Installation
 
-```sh
+```
 npm install --save-dev @ordinateio/notify
 ```
 
