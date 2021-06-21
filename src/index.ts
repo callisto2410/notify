@@ -78,13 +78,6 @@ export type NotifyAnimation =
 /**
  * The implementation of simple notifications.
  *
- * @see success
- * @see info
- * @see warning
- * @see error
- * @see remove
- * @see clear
- *
  * Notify:
  * [Github]{@link https://github.com/ordinateio/notify}
  */
