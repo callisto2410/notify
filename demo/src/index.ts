@@ -36,9 +36,9 @@ document.body.addEventListener('click', (event: Event) => {
                 const random = Math.floor((Math.random() * 4));
                 let method = notify.success.bind(notify);
 
-                random === 1 && (method = notify.info.bind(notify));
-                random === 2 && (method = notify.warning.bind(notify));
-                random === 3 && (method = notify.error.bind(notify));
+                if (random === 1) method = notify.info.bind(notify);
+                if (random === 2) method = notify.warning.bind(notify);
+                if (random === 3) method = notify.error.bind(notify);
 
                 method(`<strong>For example:</strong> When designing a brochure or book, a designer ...`, {
                     position: position as NotifyPosition,
