@@ -14,7 +14,7 @@ npm install --save-dev @ordinateio/notify
 import "@ordinateio/notify/dist/index.css";
 import {Notify} from "@ordinateio/notify";
 
-const notify = new Notify({
+let notify = new Notify({
     duration: 20000,
 });
 
