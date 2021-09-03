@@ -82,7 +82,8 @@
     background: rgba(#689f38, .9);
 
     .notify-content__icon {
-      background: url('assets/images/success.svg') 0 50% no-repeat;
+      mask-image: url('assets/images/success.svg');
+      background:  #ffffff;
     }
   }
 
@@ -90,7 +91,8 @@
     background: rgba(#1976d2, .9);
 
     .notify-content__icon {
-      background: url('assets/images/info.svg') 0 50% no-repeat;
+      mask-image: url('assets/images/info.svg');
+      background:  #ffffff;
     }
   }
 
@@ -98,7 +100,8 @@
     background: rgba(#f57c00, .9);
 
     .notify-content__icon {
-      background: url('assets/images/warning.svg') 0 50% no-repeat;
+      mask-image: url('assets/images/warning.svg');
+      background:  #ffffff;
     }
   }
 
@@ -106,7 +109,8 @@
     background: rgba(#d32f2f, .9);
 
     .notify-content__icon {
-      background: url('assets/images/error.svg') 0 50% no-repeat;
+      mask-image: url('assets/images/error.svg');
+      background:  #ffffff;
     }
   }
 
@@ -116,12 +120,13 @@
   }
 
   &__icon {
-    width: 60px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
+    margin: 0 20px 0 0;
   }
 
   &__description {
-    width: calc(100% - 60px);
+    width: calc(100% - 52px);
   }
 
   &__progressbar {
