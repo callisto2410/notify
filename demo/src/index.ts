@@ -3,12 +3,12 @@ import {Notify, NotifyPosition} from '../../src';
 
 import './index.scss';
 
-const notify = new Notify({
+let notify = new Notify({
     duration: 20000,
 });
 
 document.body.addEventListener('click', (event: Event) => {
-    const target = event.target as HTMLDivElement | null;
+    let target = event.target as HTMLDivElement | null;
     if (!target) return;
 
     if (target.classList.contains('content-button--notify')) {
@@ -33,12 +33,12 @@ document.body.addEventListener('click', (event: Event) => {
                 notify.error('For example, when designing a brochure or book, a designer ...');
                 break;
             default:
-                const random = Math.floor((Math.random() * 4));
+                let random = Math.floor((Math.random() * 4));
                 let method = notify.success.bind(notify);
 
-                if (random === 1) method = notify.info.bind(notify);
-                if (random === 2) method = notify.warning.bind(notify);
-                if (random === 3) method = notify.error.bind(notify);
+                random === 1 && (method = notify.info.bind(notify));
+                random === 2 && (method = notify.warning.bind(notify));
+                random === 3 && (method = notify.error.bind(notify));
 
                 method(`<strong>For example:</strong> When designing a brochure or book, a designer ...`, {
                     position: position as NotifyPosition,
@@ -48,16 +48,8 @@ document.body.addEventListener('click', (event: Event) => {
     }
 
     if (target.classList.contains('content-button--control')) {
-        if (target.classList.contains('content-button--remove')) {
-            notify.remove();
-        }
-
-        if (target.classList.contains('content-button--clear')) {
-            notify.clear();
-        }
-
-        if (target.classList.contains('content-button--toggle-wallpaper')) {
-            document.body.classList.toggle('use-wallpaper');
-        }
+        target.classList.contains('content-button--remove') && notify.remove();
+        target.classList.contains('content-button--clear') && notify.clear();
+        target.classList.contains('content-button--toggle-wallpaper') && document.body.classList.toggle('use-wallpaper');
     }
 });
