@@ -70,7 +70,7 @@
     min-width: 100px;
     margin: 0 0 10px;
     box-shadow: 0 0 10px rgba(#000, .2);
-    backdrop-filter: blur(3px);
+    backdrop-filter: blur(5px);
     user-select: none;
     cursor: pointer;
 
@@ -79,7 +79,7 @@
     }
 
     &--success {
-        background: rgba(#689f38, .9);
+        background: rgba(#689f38, .8);
 
         .notify-content__icon {
             mask-image: url('assets/images/success.svg');
@@ -88,7 +88,7 @@
     }
 
     &--info {
-        background: rgba(#1976d2, .9);
+        background: rgba(#1976d2, .8);
 
         .notify-content__icon {
             mask-image: url('assets/images/info.svg');
@@ -97,7 +97,7 @@
     }
 
     &--warning {
-        background: rgba(#f57c00, .9);
+        background: rgba(#f57c00, .8);
 
         .notify-content__icon {
             mask-image: url('assets/images/warning.svg');
@@ -106,7 +106,7 @@
     }
 
     &--error {
-        background: rgba(#d32f2f, .9);
+        background: rgba(#d32f2f, .8);
 
         .notify-content__icon {
             mask-image: url('assets/images/error.svg');
