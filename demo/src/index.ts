@@ -1,7 +1,9 @@
-import '../../src/index.scss';
-import {Notify, NotifyPosition} from '../../src';
+import 'animate.css';
 
 import './index.scss';
+
+import '../../src/index.scss';
+import {Notify, NotifyPosition} from '../../src';
 
 let notify = new Notify({
     duration: 20000,

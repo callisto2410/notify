@@ -37,7 +37,6 @@
   },
   "devDependencies": {
     "@types/node": "^16",
-    "animate.css": "^4",
     "autoprefixer": "^10",
     "copyfiles": "^2",
     "css-loader": "^6",
@@ -53,5 +52,8 @@
     "webpack": "^5",
     "webpack-cli": "^4",
     "webpack-merge": "^5"
+  },
+  "dependencies": {
+    "animate.css": "^4.1.1"
   }
 }
