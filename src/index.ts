@@ -75,12 +75,6 @@ export type NotifyAnimation =
     | 'zoomOut' | 'zoomOutDown' | 'zoomOutLeft' | 'zoomOutRight' | 'zoomOutUp' | 'slideInDown' | 'slideInLeft'
     | 'slideInRight' | 'slideInUp' | 'slideOutDown' | 'slideOutLeft' | 'slideOutRight' | 'slideOutUp';
 
-/**
- * The implementation of simple notifications.
- *
- * Notify:
- * [Github]{@link https://github.com/ordinateio/notify}
- */
 export class Notify {
     /**
      * CSS selector for the notification container.
