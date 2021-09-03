@@ -210,7 +210,7 @@ export class Notify {
      * Deletes all notifications immediately.
      */
     remove(): void {
-        const containers = document.querySelectorAll('.' + this.container) as NodeListOf<HTMLElement>;
+        const containers = document.querySelectorAll(`.${this.container}`) as NodeListOf<HTMLElement>;
 
         containers.forEach((container) => {
             container.remove();
@@ -221,10 +221,10 @@ export class Notify {
      * Deletes all notifications using animation.
      */
     clear(): void {
-        const containers = document.querySelectorAll('.' + this.container) as NodeListOf<HTMLElement>;
+        const containers = document.querySelectorAll(`.${this.container}`) as NodeListOf<HTMLElement>;
 
         containers.forEach((container) => {
-            const elements = container.querySelectorAll('.' + this.notify) as NodeListOf<NotifyElement>;
+            const elements = container.querySelectorAll(`.${this.notify}`) as NodeListOf<NotifyElement>;
 
             elements.forEach((element) => {
                 Notify.resetLifetime(element);
@@ -284,8 +284,8 @@ export class Notify {
      * @private
      */
     private createContainer(properties: NotifyDefaults): HTMLElement {
-        const selector = this.container + '--' + properties.position;
-        let container = document.querySelector('.' + selector) as HTMLElement | null;
+        const selector = `${this.container}--${properties.position}`;
+        let container = document.querySelector(`.${selector}`) as HTMLElement | null;
 
         if (!container) {
             container = Notify.createElement(this.container, selector);
@@ -305,8 +305,8 @@ export class Notify {
         const element = Notify.createElement(
             this.notify,
             'animate__animated',
-            'animate__' + properties.animationIn,
-            this.notify + '--' + properties.type,
+            `animate__${properties.animationIn}`,
+            `${this.notify}--${properties.type}`,
         ) as NotifyElement;
 
         element.notify = {
@@ -316,7 +316,7 @@ export class Notify {
             progressbar: this.createProgressbar(properties),
         };
 
-        element.style.animationDuration = element.notify.animationDuration + 'ms';
+        element.style.animationDuration = `${element.notify.animationDuration}ms`;
 
         element.append(
             element.notify.pic,
@@ -336,10 +336,10 @@ export class Notify {
      */
     private setLifetime(element: NotifyElement, duration?: number): void {
         element.notify.timeout = window.setTimeout(() => {
-            element.classList.add('animate__' + element.notify.animationOut);
+            element.classList.add(`animate__${element.notify.animationOut}`);
 
             setTimeout(() => {
-                const containers = document.querySelectorAll('.' + this.container) as NodeListOf<HTMLElement>;
+                const containers = document.querySelectorAll(`.${this.container}`) as NodeListOf<HTMLElement>;
 
                 element.remove();
                 containers.forEach((container) => {
@@ -369,7 +369,7 @@ export class Notify {
      * @private
      */
     private toggleProgressbar(element: NotifyElement, duration: number = 0): void {
-        element.notify.progressbar.style.transitionDuration = duration + 'ms';
+        element.notify.progressbar.style.transitionDuration = `${duration}ms`;
         element.notify.progressbar.classList.toggle(this.progressbarToZero);
     }
 
@@ -416,7 +416,7 @@ export class Notify {
      */
     private createProgressbar(properties: NotifyDefaults): HTMLElement {
         const progressbar = Notify.createElement(this.progressbar);
-        progressbar.style.transitionDuration = properties.duration + 'ms';
+        progressbar.style.transitionDuration = `${properties.duration}ms`;
 
         setTimeout(() => {
             progressbar.classList.toggle(this.progressbarToZero);
